@@ -47,7 +47,6 @@ const LoginBox: React.FC<LoginBoxProps> = ({ open, handleClose, isRegistering })
     try {
       const response = await fetch(`${API}/auth/login`, {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -76,7 +75,6 @@ const LoginBox: React.FC<LoginBoxProps> = ({ open, handleClose, isRegistering })
     try {
       const response = await fetch(`${API}/auth/register`, {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
