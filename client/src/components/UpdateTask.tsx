@@ -78,6 +78,7 @@ const UpdateTask: React.FC<UpdateTaskProps> = ({ taskData, open, handleClose }) 
         try {
             const response = await fetch(`${API}/route/updateTask`, {
                 method: 'PUT',
+                mode: 'no-cors',
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
