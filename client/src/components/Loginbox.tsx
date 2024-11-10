@@ -119,7 +119,6 @@ const LoginBox: React.FC<LoginBoxProps> = ({ open, handleClose, isRegistering })
           const endpoint = isRegistering ? 'auth/google-signup' : 'auth/google-login';
           const response = await fetch(`${API}/${endpoint}`, {
             method: 'POST',
-            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ code: authResult.code }),
           });

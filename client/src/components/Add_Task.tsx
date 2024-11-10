@@ -60,7 +60,6 @@ const AddTask: React.FC<AddTaskProps> = ({ open, handleClose }) => {
         try {
             const response = await fetch(`${API}/route/tasks`, {
                 method: 'POST',
-                mode: 'no-cors',
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',

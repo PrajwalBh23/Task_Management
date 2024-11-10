@@ -72,8 +72,7 @@ const GeneratedHTML: React.FC = () => {
         const token = localStorage.getItem('token');
         try {
             const response = await fetch(`${API}/route/getTask?taskId=${taskId}`, {
-                method: 'GET', // Changed to POST
-                mode: 'no-cors',
+                method: 'GET',
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -98,7 +97,6 @@ const GeneratedHTML: React.FC = () => {
         try {
             const response = await fetch(`${API}/route/edit-status`, {
                 method: 'PATCH',
-                mode: 'no-cors',
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -126,7 +124,6 @@ const GeneratedHTML: React.FC = () => {
         try {
             const response = await fetch(`${API}/route/delect`, {
                 method: 'DELETE',
-                mode: 'no-cors',
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
@@ -162,8 +159,7 @@ const GeneratedHTML: React.FC = () => {
             const token = tokenFromUrl || localStorage.getItem('token');
             try {
                 const response = await fetch(`${API}/route/tasks`, {
-                    method: 'GET',  // Use 'GET' instead of 'Get' (HTTP methods should be uppercase)
-                    mode: 'no-cors',
+                    method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'application/json',
