@@ -17,7 +17,7 @@ interface User {
   [key: string]: any; // Include other decoded token properties
 }
 
-export const API = "http://localhost:5000";
+export const API = "https://daily-task-management.onrender.com";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 

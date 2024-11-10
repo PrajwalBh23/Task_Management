@@ -12,6 +12,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import AddTask from './Add_Task'; // Import the Add_Task component
 import UpdateTask from './UpdateTask';
 import { useLocation } from 'react-router-dom';
+import {API} from "../AuthContext";
 
 interface Task {
     _id: string;
@@ -70,7 +71,7 @@ const GeneratedHTML: React.FC = () => {
     const handleEdit = async (taskId: string) => {
         const token = localStorage.getItem('token');
         try {
-            const response = await fetch(`http://localhost:5000/route/getTask?taskId=${taskId}`, {
+            const response = await fetch(`${API}/route/getTask?taskId=${taskId}`, {
                 method: 'GET', // Changed to POST
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -94,7 +95,7 @@ const GeneratedHTML: React.FC = () => {
         console.log(`Changing status of task ${taskId} to ${newStatus}`);
         const token = tokenFromUrl || localStorage.getItem('token');
         try {
-            const response = await fetch('http://localhost:5000/route/edit-status', {
+            const response = await fetch(`${API}/route/edit-status`, {
                 method: 'PATCH',
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -121,7 +122,7 @@ const GeneratedHTML: React.FC = () => {
         console.log('Delete task', taskId);
         const token = tokenFromUrl || localStorage.getItem('token');
         try {
-            const response = await fetch('http://localhost:5000/route/delect', {
+            const response = await fetch(`${API}/route/delect`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -157,7 +158,7 @@ const GeneratedHTML: React.FC = () => {
         const getAllTasks = async () => {
             const token = tokenFromUrl || localStorage.getItem('token');
             try {
-                const response = await fetch('http://localhost:5000/route/tasks', {
+                const response = await fetch(`${API}/route/tasks`, {
                     method: 'GET',  // Use 'GET' instead of 'Get' (HTTP methods should be uppercase)
                     headers: {
                         Authorization: `Bearer ${token}`,

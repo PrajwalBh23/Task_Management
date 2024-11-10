@@ -5,6 +5,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useLocation } from 'react-router-dom';
 import { parse, isValid, format } from 'date-fns';
+import {API} from "../AuthContext";
 
 // Type for the task object
 interface Task {
@@ -75,7 +76,7 @@ const UpdateTask: React.FC<UpdateTaskProps> = ({ taskData, open, handleClose }) 
         const token = tokenFromUrl || localStorage.getItem('token');
 
         try {
-            const response = await fetch('http://localhost:5000/route/updateTask', {
+            const response = await fetch(`${API}/route/updateTask`, {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${token}`,
