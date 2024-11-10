@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 app.use(cors({
     origin: 'https://task-management-sage-seven.vercel.app', // Allow your frontend origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
+    methods: ['GET', 'POST', 'PUT', 'PATCH',  'DELETE'], // Specify allowed HTTP methods
     credentials: true // If you need cookies or other credentials
 }));
 
